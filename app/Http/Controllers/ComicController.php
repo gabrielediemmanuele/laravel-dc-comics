@@ -49,6 +49,7 @@ class ComicController extends Controller
         /* 
         ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
         */
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
