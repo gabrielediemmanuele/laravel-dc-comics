@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('font-awesome')
+@section('main-content')
     <div class="container">
-        <a href="{{ route('comics.index')}}" class="btn btn-primary"> 
-            Back Home
+        <a href="{{ route('comics.index')}}" class="btn btn-primary mt-3 mb-4"> 
+            Back to Comics
         </a>
-        <h1 class="text-primary">Create new comic!</h1>
+        <h1 class="text-primary mb-3">Create a new comic!</h1>
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
-        <form action="{{ route('comics.store') }}" method="POST" class="row g-3">
+        <form class="row g-3" action="{{ route('comics.store') }}" method="POST" >
             @csrf 
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
@@ -37,7 +37,7 @@
 
             <div class="col-12" class="form-label">
                 <label for="description">Description</label>
-                <textarea type="text" id="description" name="description" class="form-control">
+                <textarea type="text" id="description" name="description" class="form-control"></textarea>
             </div>
 
             <div class="col-12">
@@ -45,7 +45,7 @@
                 <input type="text" id="thumb" name="thumb" class="form-control">
             </div>
 
-            <div class="col-3" class="form-label">
+            <div class="col-3">
                 <button class="btn btn-primary">Upload</button>
             </div>
         </form>

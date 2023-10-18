@@ -8,6 +8,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 @section('main-content')
   <section class="container mt-5">
+    <a href="{{ route('comics.create')}}" class="btn btn-primary">
+      + Add New Comic
+  </a>
    <h1> Comics List </h1>
    <table class="table table-bordered">
     <thead>
