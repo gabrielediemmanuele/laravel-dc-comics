@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ env('APP_NAME') }}</title>
 
+  @yield('font-awesome')
+
   <!-- Styles -->
   @vite('resources/js/app.js')
 </head>
