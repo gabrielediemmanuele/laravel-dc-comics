@@ -21,7 +21,6 @@ return new class extends Migration {
             $table->string('series', 30);
             $table->string('sale_date', 30);
             $table->string('type', 30);
-            $table->string('artists');
             $table->timestamps();
 
         });
