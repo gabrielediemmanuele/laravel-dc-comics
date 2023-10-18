@@ -8,14 +8,11 @@
         <h1 class="text-primary">Create new comic!</h1>
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form action="{{ route('comics.store') }}" method="POST" class="row g-3">
+            @csrf 
+            {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" id="title" name="title" class="form-control">
-            </div>
-
-            <div class="col-3">
-                <label for="thumb" class="form-label">Thumb</label>
-                <input type="text" id="thumb" name="thumb" class="form-control">
             </div>
 
             <div class="col-3">
@@ -41,6 +38,11 @@
             <div class="col-12" class="form-label">
                 <label for="description">Description</label>
                 <textarea type="text" id="description" name="description" class="form-control">
+            </div>
+
+            <div class="col-12">
+                <label for="thumb" class="form-label">Thumb</label>
+                <input type="text" id="thumb" name="thumb" class="form-control">
             </div>
 
             <div class="col-3" class="form-label">

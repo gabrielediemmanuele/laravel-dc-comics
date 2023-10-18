@@ -37,7 +37,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* inside $data there are form dates */
+        $data = $request->all();
+        /* create a new comic*/
+        $comic = new Comic();
+        /* fill with form information */
+        $comic->fill($data);
+        /* save inside database */
+        $comic->save();
+
+        /* 
+        ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
+        */
     }
 
     /**
