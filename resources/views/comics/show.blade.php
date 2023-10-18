@@ -2,6 +2,9 @@
 
 @section('main-content')
 <div class="container mt-4 mb-3">
+   <a href="{{ route('comics.create')}}" class="btn btn-primary">
+    + Add New Comic
+</a>
     <div class="card" style="width: 20rem;">
         <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
         <div class="card-header">
