@@ -35,7 +35,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <td scope="col">{{$comic->created_at}}</td>
         <td scope="col">{{$comic->updated_at}}</td>
         <td scope="col">
-            <a href="">
+           {{--*  connection to "show" in ComicController and id  --}}
+            <a href="{{ route('comics.show', $comic) }}">
                 <i class="fa-solid fa-eye fa-xl"></i>
             </a>
         </td>
