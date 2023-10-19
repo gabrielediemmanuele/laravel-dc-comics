@@ -72,8 +72,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     const thumbPrev = document.getElementById('thumb-preview');
     const thumbInput = document.getElementById('thumb');
 
-    thumbInput.addEvenetListener('change', function(){
-        thumbPrev.thumb = this.value;
+    thumbInput.addEventListener('change', function(){
+        thumbPrev.src = this.value;
     })
 </script>
 @endsection

@@ -43,7 +43,7 @@
 
             <div class="col-12">
                 <label for="thumb" class="form-label">Thumb</label>
-                <input type="url" id="thumb" name="thumb" class="form-control" value="">
+                <input type="text" id="thumb" name="thumb" class="form-control" value="">
             </div>
 
             <div class="col-12">
@@ -62,8 +62,8 @@
     const thumbPrev = document.getElementById('thumb-preview');
     const thumbInput = document.getElementById('thumb');
 
-    thumbInput.addEvenetListener('change', function(){
-        thumbPrev.thumb = this.value;
+    thumbInput.addEventListener('change', function(){
+        thumbPrev.src = this.value;
     })
 </script>
 @endsection
