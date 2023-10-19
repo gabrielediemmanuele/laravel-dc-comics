@@ -49,7 +49,9 @@ class ComicController extends Controller
         /* 
         ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
         */
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)
+            ->with('message_type', 'success')
+            ->with('message', 'Comic added successfully !');
     }
 
     /**
@@ -85,7 +87,9 @@ class ComicController extends Controller
     {
         $data = $request->all();
         $comic->update($data);
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)
+            ->with('message_type', 'success')
+            ->with('message', 'Comic edited successfully !');
     }
 
     /**
@@ -97,6 +101,8 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')
+            ->with('message_type', 'danger')
+            ->with('message', 'Comic deleted !');
     }
 }

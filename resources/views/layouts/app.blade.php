@@ -17,6 +17,14 @@
   @include('partials._navbar')
 
   <main>
+    @if(session('message'))
+      <div class="container mb-5 mt-5">
+        <div class="alert alert-{{ session('message_type') ?? 'info'}}">
+          {{ session('message') }}
+        </div>
+      </div>
+    @endif
+
     @yield('main-content')
   </main>
   <footer>

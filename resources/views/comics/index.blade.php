@@ -51,7 +51,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
               </a>
 
               {{--* MODAL --}}
-              <div class="modal fade" id="delete-modal-{{$comic->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="delete-modal-{{ $comic->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -65,9 +65,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                       <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Back</button>
 
                       <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="mx-2">
-                        @csrf6
+                        @csrf
                         @method('DELETE')
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger">Delete</button>
                       </form>
                     </div>
                   </div>
