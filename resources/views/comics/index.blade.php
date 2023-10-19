@@ -37,10 +37,16 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <td scope="col">{{$comic->type}}</td>
         <td scope="col">{{$comic->created_at}}</td>
         <td scope="col">{{$comic->updated_at}}</td>
-        <td scope="col">
+        <td scope="col" class="d-flex">
            {{--*  connection to "show" in ComicController and id  --}}
             <a href="{{ route('comics.show', $comic) }}">
-                <i class="fa-solid fa-eye fa-xl"></i>
+                <i class="fa-solid fa-eye fa-xl m-2"></i>
+            </a>
+            <a href="{{ route('comics.show', $comic) }}">
+              <i class="fa-solid fa-pencil fa-xl m-2 text-success"></i>
+            </a>
+            <a href="{{ route('comics.show', $comic) }}">
+              <i class="fa-solid fa-trash fa-xl m-2 text-danger"></i>
             </a>
         </td>
       </tr>
