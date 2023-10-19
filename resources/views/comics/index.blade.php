@@ -45,9 +45,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <a href="{{ route('comics.edit', $comic) }}">
               <i class="fa-solid fa-pencil fa-xl mx-2 text-success"></i>
             </a>
-            <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="mx-2">
-              @csrf
-              @method('DELETE')
+            
               <a href="#" class="mx-1" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$comic->id}}">
                 <i class="fa-solid fa-trash fa-xl text-danger"></i>
               </a>
@@ -57,25 +55,24 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="delete-modal-{{$comic->id}}">Modal title</h1>
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina Comics</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      ...
+                      Do you want to delete "<strong>{{$comic->title}}</strong>"? Click <span class="text-danger">"Delete"</span> to continue or go <span class="text-primary">"Back"</span>  to comics.
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Back</button>
 
                       <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="mx-2">
-                        @csrf
+                        @csrf6
                         @method('DELETE')
-                      <button type="button" class="btn btn-danger">Save changes</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
                       </form>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
         </td>
       </tr>
       @endforeach
