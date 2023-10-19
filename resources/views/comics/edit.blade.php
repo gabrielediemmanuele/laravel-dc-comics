@@ -53,6 +53,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <label for="thumb" class="form-label">Thumb</label>
                 <input type="text" id="thumb" name="thumb" class="form-control"  value="{{ $comic->thumb }}">
             </div>
+            
+            <div class="col-12">
+                <img src="{{ $comic->thumb }}" id="thumb-preview" class="img-fluid w-25">
+            </div>
+            
 
             <div class="col-3">
                 <button class="btn btn-success">Edit 
@@ -61,4 +66,15 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             </div>
         </form>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+    const thumbPrev = document.getElementById('thumb-preview');
+    const thumbInput = document.getElementById('thumb');
+
+    thumbInput.addEvenetListener('change', function(){
+        thumbPrev.src = this.value;
+    })
+</script>
 @endsection
