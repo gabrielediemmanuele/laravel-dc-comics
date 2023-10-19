@@ -5,9 +5,12 @@
     <a href="{{ route('comics.index')}}" class="btn btn-primary"> 
         Back to Comics
     </a>
-   <a href="{{ route('comics.create')}}" class="btn btn-primary">
-    + Add New Comic
-</a>
+    <a href="{{ route('comics.create')}}" class="btn btn-primary">
+        + Add New Comic
+    </a>
+        <a href="{{ route('comics.edit', $comic)}}" class="btn btn-success">
+            + Edit Comic
+        </a>
     <div class="card mt-3" style="width: 20rem;">
         <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
         <div class="card-header">

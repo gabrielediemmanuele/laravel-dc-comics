@@ -11,6 +11,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <a href="{{ route('comics.index')}}" class="btn btn-success mt-3 mb-4"> 
             Back to Comics
         </a>
+        <a href="{{ route('comics.show', $comic)}}" class="btn btn-success mt-3 mb-4"> 
+            Show Details
+        </a>
         <h1 class="text-success mb-3">Edit Comic!</h1>
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('comics.update', $comic) }}" method="POST" >
