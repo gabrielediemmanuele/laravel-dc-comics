@@ -1,11 +1,17 @@
 @extends('layouts.app')
 
+@section('font-awesome')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
 @section('main-content')
-    <div class="container">
-        <a href="{{ route('comics.index')}}" class="btn btn-primary mt-3 mb-4"> 
+    <div class="container mb-5">
+        <a href="{{ route('comics.index')}}" class="btn btn-success mt-3 mb-4"> 
             Back to Comics
         </a>
-        <h1 class="text-primary mb-3">Create a new comic!</h1>
+        <h1 class="text-success mb-3">Edit Comic!</h1>
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('comics.update', $comic) }}" method="POST" >
             @csrf 
@@ -46,8 +52,8 @@
             </div>
 
             <div class="col-3">
-                <button class="btn btn-primary">Edit 
-                    <i class="fa-solid fa-pencil fa-lg m-2 text-light"></i>
+                <button class="btn btn-success">Edit 
+                    <i class="fa-solid fa-pencil fa-sm mx-2 text-light"></i>
                 </button>
             </div>
         </form>

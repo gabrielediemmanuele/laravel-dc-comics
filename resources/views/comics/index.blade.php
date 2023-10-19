@@ -40,13 +40,13 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <td scope="col" class="d-flex">
            {{--*  connection to "show" in ComicController and id  --}}
             <a href="{{ route('comics.show', $comic) }}">
-                <i class="fa-solid fa-eye fa-xl m-2"></i>
+                <i class="fa-solid fa-eye fa-xl mr-2"></i>
+            </a>
+            <a href="{{ route('comics.edit', $comic) }}">
+              <i class="fa-solid fa-pencil fa-xl mr-2 text-success"></i>
             </a>
             <a href="{{ route('comics.show', $comic) }}">
-              <i class="fa-solid fa-pencil fa-xl m-2 text-success"></i>
-            </a>
-            <a href="{{ route('comics.show', $comic) }}">
-              <i class="fa-solid fa-trash fa-xl m-2 text-danger"></i>
+              <i class="fa-solid fa-trash fa-xl text-danger"></i>
             </a>
         </td>
       </tr>

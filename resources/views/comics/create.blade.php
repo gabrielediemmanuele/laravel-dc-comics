@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('main-content')
     <div class="container">
         <a href="{{ route('comics.index')}}" class="btn btn-primary mt-3 mb-4"> 
