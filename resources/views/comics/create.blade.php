@@ -43,7 +43,7 @@
 
             <div class="col-12">
                 <label for="thumb" class="form-label">Thumb</label>
-                <input type="text" id="thumb" name="thumb" class="form-control" value="">
+                <input type="url" id="thumb" name="thumb" class="form-control" value="">
             </div>
 
             <div class="col-12">
@@ -63,7 +63,7 @@
     const thumbInput = document.getElementById('thumb');
 
     thumbInput.addEvenetListener('change', function(){
-        thumbPrev.src = this.value;
+        thumbPrev.thumb = this.value;
     })
 </script>
 @endsection

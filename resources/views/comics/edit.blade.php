@@ -58,7 +58,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <img src="{{ $comic->thumb }}" id="thumb-preview" class="img-fluid w-25">
             </div>
             
-
             <div class="col-3">
                 <button class="btn btn-success">Edit 
                     <i class="fa-solid fa-pencil fa-sm mx-2 text-light"></i>
@@ -74,7 +73,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     const thumbInput = document.getElementById('thumb');
 
     thumbInput.addEvenetListener('change', function(){
-        thumbPrev.src = this.value;
+        thumbPrev.thumb = this.value;
     })
 </script>
 @endsection
