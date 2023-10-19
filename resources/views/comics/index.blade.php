@@ -45,9 +45,13 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <a href="{{ route('comics.edit', $comic) }}">
               <i class="fa-solid fa-pencil fa-xl mx-2 text-success"></i>
             </a>
-            <a href="{{ route('comics.show', $comic) }}">
-              <i class="fa-solid fa-trash fa-xl mx-2 text-danger"></i>
-            </a>
+            <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="mx-2">
+              @csrf
+              @method('DELETE')
+              <a href="{{ route('comics.show', $comic) }}">
+                <i class="fa-solid fa-trash fa-xl text-danger"></i>
+              </a>
+            </form>
         </td>
       </tr>
       @endforeach
