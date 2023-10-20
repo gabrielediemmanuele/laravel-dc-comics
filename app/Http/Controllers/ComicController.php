@@ -45,56 +45,15 @@ class ComicController extends Controller
         /* inside $data there are form dates */
         $data = $request->all();
 
-        /* Validator settings */
-        Validator::make(
-            $data,
-            /*  parameters to respect in validation - look at comics migration  */
-            [
-                'title' => 'required|string|max:100',
-                'description' => 'required|text',
-                'thumb' => 'required|text',
-                'price' => 'required|string|max:50',
-                'series' => 'required|string|max:50',
-                'sale_date' => 'required|string|max:50',
-                'type' => 'required|string|max:30'
-            ],
-            /*  
-             * add message for each parameter  
-             */
-            [
-                'title.required' => 'The title is binding!',
-                'title.string' => 'Title need to be a string!',
-                'title.max' => 'The title must have max 100 characters!',
-
-                'description.required' => 'The description is binding!',
-                'description.text' => 'Description need to be a text!',
-
-                'thumb.required' => 'The thumb is binding!',
-                'thumb.text' => 'Thumb need to be a text!',
-
-                'price.required' => 'The price is binding!',
-                'price.string' => 'Price need to be a string!',
-                'price.max' => 'The price must have max 50 characters!',
-
-                'series.required' => 'The series is binding!',
-                'series.string' => 'Series need to be a string!',
-                'series.max' => 'The series must have max 50 characters!',
-
-                'sale_date.required' => 'The Sale Date is binding!',
-                'sale_date.string' => 'Sale Date need to be a string!',
-                'sale_date.max' => 'The sale date must have max 50 characters!',
-
-                'type.required' => 'The type is binding!',
-                'type.string' => 'Type need to be a string!',
-                'type.max' => 'The type must have max 30 characters!'
-            ]
-        )->validate();
-
+        /* validation call */
+        $this->validation($data);
 
         /* create a new comic*/
         $comic = new Comic();
+
         /* fill with form information */
         $comic->fill($data);
+
         /* save inside database */
         $comic->save();
 
@@ -156,5 +115,54 @@ class ComicController extends Controller
         return redirect()->route('comics.index')
             ->with('message_type', 'danger')
             ->with('message', 'Comic deleted !');
+    }
+
+    /* validate function */
+    public function validation($data)
+    {
+        return /* Validator settings */
+            Validator::make(
+                $data,
+                /*  parameters to respect in validation - look at comics migration  */
+                [
+                    'title' => 'required|string|max:100',
+                    'description' => 'required|text',
+                    'thumb' => 'required|text',
+                    'price' => 'required|string|max:50',
+                    'series' => 'required|string|max:50',
+                    'sale_date' => 'required|string|max:50',
+                    'type' => 'required|string|max:30'
+                ],
+                /*  
+                 * add message for each parameter  
+                 */
+                [
+                    'title.required' => 'The title is binding!',
+                    'title.string' => 'Title need to be a string!',
+                    'title.max' => 'The title must have max 100 characters!',
+
+                    'description.required' => 'The description is binding!',
+                    'description.text' => 'Description need to be a text!',
+
+                    'thumb.required' => 'The thumb is binding!',
+                    'thumb.text' => 'Thumb need to be a text!',
+
+                    'price.required' => 'The price is binding!',
+                    'price.string' => 'Price need to be a string!',
+                    'price.max' => 'The price must have max 50 characters!',
+
+                    'series.required' => 'The series is binding!',
+                    'series.string' => 'Series need to be a string!',
+                    'series.max' => 'The series must have max 50 characters!',
+
+                    'sale_date.required' => 'The Sale Date is binding!',
+                    'sale_date.string' => 'Sale Date need to be a string!',
+                    'sale_date.max' => 'The sale date must have max 50 characters!',
+
+                    'type.required' => 'The type is binding!',
+                    'type.string' => 'Type need to be a string!',
+                    'type.max' => 'The type must have max 30 characters!'
+                ]
+            )->validate();
     }
 }

@@ -8,7 +8,7 @@
         </a>
         <h1 class="text-primary mb-3">Create a new comic!</h1>
         {{--* Validator conditions to show at screen error message - go to controllers > ComicController > n°49  --}}
-        @if ($error->any())
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <h3>Correggi i seguenti errori: </h3>
                 <ul>
