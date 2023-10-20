@@ -79,5 +79,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     </tbody>
   </table>
 
+  {{ $comics->links('pagination::bootstrap-5')}}
+
   </section>
 @endsection
