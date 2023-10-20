@@ -91,7 +91,6 @@ class ComicController extends Controller
     /* validate function */
     private function validation($data)
     {
-
         Validator::make(
             $data,
             [
@@ -100,7 +99,7 @@ class ComicController extends Controller
                 'thumb' => 'required|text',
                 'price' => 'required|string|max:50',
                 'series' => 'required|string|max:50',
-                'sale_date' => 'required|string|max:50',
+                'sale_date' => 'required|string|max:30',
                 'type' => 'required|string|max:30'
             ],
             [
