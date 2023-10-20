@@ -11,7 +11,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     <a href="{{ route('comics.create')}}" class="btn btn-primary">
       + Add New Comic
   </a>
-   <h1> Comics List </h1>
+   <h1> {{$title}} </h1>
    <table class="table table-bordered">
     <thead>
       <tr>
