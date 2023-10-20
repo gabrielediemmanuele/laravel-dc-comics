@@ -7,6 +7,17 @@
             Back to Comics
         </a>
         <h1 class="text-primary mb-3">Create a new comic!</h1>
+        {{--* Validator conditions to show at screen error message - go to controllers > ComicController > n°49  --}}
+        @if ($error->any())
+            <div class="alert alert-danger">
+                <h3>Correggi i seguenti errori: </h3>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('comics.store') }}" method="POST" >
             @csrf 

@@ -49,7 +49,13 @@ class ComicController extends Controller
         Validator::make(
             $data,
             [
-                'parametro' => 'direttiva|direttiva|direttiva'
+                'title' => 'required|string|max:100',
+                'description' => 'required|text',
+                'thumb' => 'required|text',
+                'price' => 'required|string|max:50',
+                'series' => 'required|string|max:50',
+                'sale_date' => 'required|string|max:50',
+                'type' => 'required|string|max:30'
             ]
         )->validate();
 
