@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+/* connection to models Comic  */
 use App\Models\Comic;
+
+/* Validation system connection  -> find in public function STORE n°43*/
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -40,6 +44,16 @@ class ComicController extends Controller
     {
         /* inside $data there are form dates */
         $data = $request->all();
+
+        /* Validator settings */
+        Validator::make(
+            $data,
+            [
+                'parametro' => 'direttiva|direttiva|direttiva'
+            ]
+        )->validate();
+
+
         /* create a new comic*/
         $comic = new Comic();
         /* fill with form information */
