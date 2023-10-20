@@ -33,7 +33,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('') ?? $comic->title }}">
+                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') ?? $comic->title }}">
                 {{--* error method  --}}
                 @error('title')
                 <div class="invalid-feedback">
@@ -44,7 +44,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" id="price" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('') ?? $comic->price }}">
+                <input type="text" id="price" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') ?? $comic->price }}">
                 {{--* error method  --}}
                 @error('price')
                 <div class="invalid-feedback">
@@ -55,7 +55,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-3">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" id="series" name="series" class="form-control @error('series') is-invalid @enderror" value="{{ old('') ?? $comic->series }}">
+                <input type="text" id="series" name="series" class="form-control @error('series') is-invalid @enderror" value="{{ old('series') ?? $comic->series }}">
                 {{--* error method  --}}
                 @error('series')
                 <div class="invalid-feedback">
@@ -66,7 +66,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-3">
                 <label for="sale_date" class="form-label">Sale Date</label>
-                <input type="text" id="sale_date" name="sale_date" class="form-control @error('sale_date') is-invalid @enderror" value="{{ old('') ?? $comic->sale_date }}">
+                <input type="text" id="sale_date" name="sale_date" class="form-control @error('sale_date') is-invalid @enderror" value="{{ old('sale_date') ?? $comic->sale_date }}">
                 {{--* error method  --}}
                 @error('sale_date')
                 <div class="invalid-feedback">
@@ -77,7 +77,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-3">
                 <label for="type" class="form-label">Type</label>
-                <input type="text" id="type" name="type" class="form-control @error('type') is-invalid @enderror" value="{{ old('') ?? $comic->type }}">
+                <input type="text" id="type" name="type" class="form-control @error('type') is-invalid @enderror" value="{{ old('type') ?? $comic->type }}">
                 {{--* error method  --}}
                 @error('type')
                 <div class="invalid-feedback">
@@ -88,7 +88,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-12" class="form-label">
                 <label for="description">Description</label>
-                <textarea type="text" id="description" name="description @error('description') is-invalid @enderror" value="{{ old('') ?? $comic->description }}"></textarea>
+                <textarea type="text" id="description" name="description @error('description') is-invalid @enderror" value="{{ old('description') ?? $comic->description }}"></textarea>
                 {{--* error method  --}}
                 @error('description')
                 <div class="invalid-feedback">
@@ -99,7 +99,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-12">
                 <label for="thumb" class="form-label">Thumb</label>
-                <input type="text" id="thumb" name="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{ old('') ?? $comic->thumb }}">
+                <input type="text" id="thumb" name="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{ old('thumb') ?? $comic->thumb }}">
                 {{--* error method  --}}
                 @error('thumb')
                 <div class="invalid-feedback">
