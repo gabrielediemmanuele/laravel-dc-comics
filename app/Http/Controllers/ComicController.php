@@ -48,6 +48,7 @@ class ComicController extends Controller
         /* Validator settings */
         Validator::make(
             $data,
+            /*  parameters to respect in validation - look at comics migration  */
             [
                 'title' => 'required|string|max:100',
                 'description' => 'required|text',
@@ -56,6 +57,36 @@ class ComicController extends Controller
                 'series' => 'required|string|max:50',
                 'sale_date' => 'required|string|max:50',
                 'type' => 'required|string|max:30'
+            ],
+            /*  
+             * add message for each parameter  
+             */
+            [
+                'title.required' => 'The title is binding!',
+                'title.string' => 'Title need to be a string!',
+                'title.max' => 'The title must have max 100 characters!',
+
+                'description.required' => 'The description is binding!',
+                'description.text' => 'Description need to be a text!',
+
+                'thumb.required' => 'The thumb is binding!',
+                'thumb.text' => 'Thumb need to be a text!',
+
+                'price.required' => 'The price is binding!',
+                'price.string' => 'Price need to be a string!',
+                'price.max' => 'The price must have max 50 characters!',
+
+                'series.required' => 'The series is binding!',
+                'series.string' => 'Series need to be a string!',
+                'series.max' => 'The series must have max 50 characters!',
+
+                'sale_date.required' => 'The Sale Date is binding!',
+                'sale_date.string' => 'Sale Date need to be a string!',
+                'sale_date.max' => 'The sale date must have max 50 characters!',
+
+                'type.required' => 'The type is binding!',
+                'type.string' => 'Type need to be a string!',
+                'type.max' => 'The type must have max 30 characters!'
             ]
         )->validate();
 
