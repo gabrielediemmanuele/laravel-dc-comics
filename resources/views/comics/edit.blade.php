@@ -29,7 +29,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('comics.update', $comic) }}" method="POST" >
             @csrf
-            @method('PATCH') 
+            @method('PUT') 
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
                 <label for="title" class="form-label">Title</label>

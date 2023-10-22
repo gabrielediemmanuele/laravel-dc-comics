@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+/* Validation system connection  -> find in public function STORE n°43*/
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 /* connection to models Comic  */
 use App\Models\Comic;
-
-/* Validation system connection  -> find in public function STORE n°43*/
-use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -30,10 +30,10 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         /* inside $data there are form dates */
-        $data = $request->all();
+        /*  $data = $request->all(); */
 
         /* validation call */
-        $this->validation($data);
+        $data = $this->validation($request->all());
 
         /* create a new comic*/
         $comic = new Comic();
@@ -67,10 +67,11 @@ class ComicController extends Controller
     /* update  */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
+        /* $data = $request->all(); */
 
         /* validation call */
-        $this->validation($data);
+        $data = $this->validation($request->all());
+        /* $this->validation($data); */
 
         $comic->update($data);
 
@@ -91,7 +92,7 @@ class ComicController extends Controller
     /* validate function */
     private function validation($data)
     {
-        Validator::make(
+        $validator = Validator::make(
             $data,
             [
                 'title' => 'required|string|max:100',
@@ -100,7 +101,7 @@ class ComicController extends Controller
                 'price' => 'required|string|max:50',
                 'series' => 'required|string|max:50',
                 'sale_date' => 'required|string|max:30',
-                'type' => 'required|string|max:30'
+                'type' => 'required|string|max:30',
             ],
             [
                 'title.required' => 'The title is binding!',
@@ -127,8 +128,10 @@ class ComicController extends Controller
 
                 'type.required' => 'The type is binding!',
                 'type.string' => 'Type need to be a string!',
-                'type.max' => 'The type must have max 30 characters!'
+                'type.max' => 'The type must have max 30 characters!',
             ]
         )->validate();
+
+        return $validator;
     }
 }
