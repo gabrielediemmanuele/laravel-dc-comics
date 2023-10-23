@@ -96,8 +96,8 @@ class ComicController extends Controller
             $data,
             [
                 'title' => 'required|string|max:100',
-                'description' => 'required|text',
-                'thumb' => 'required|text',
+                'description' => 'required',
+                'thumb' => 'required',
                 'price' => 'required|string|max:50',
                 'series' => 'required|string|max:50',
                 'sale_date' => 'required|string|max:30',
@@ -109,10 +109,9 @@ class ComicController extends Controller
                 'title.max' => 'The title must have max 100 characters!',
 
                 'description.required' => 'The description is binding!',
-                'description.text' => 'Description need to be a text!',
+
 
                 'thumb.required' => 'The thumb is binding!',
-                'thumb.text' => 'Thumb need to be a text!',
 
                 'price.required' => 'The price is binding!',
                 'price.string' => 'Price need to be a string!',

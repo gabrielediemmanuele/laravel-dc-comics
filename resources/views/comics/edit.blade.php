@@ -29,7 +29,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('comics.update', $comic) }}" method="POST" >
             @csrf
-            @method('PUT') 
+            @method('PATCH') 
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             <div class="col-3">
                 <label for="title" class="form-label">Title</label>
@@ -86,9 +86,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 @enderror
             </div>
 
-            <div class="col-12" class="form-label">
-                <label for="description">Description</label>
-                <textarea type="text" id="description" name="description @error('description') is-invalid @enderror" value="{{ old('description') ?? $comic->description }}"></textarea>
+            <div class="col-12">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" id="description" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description') ?? $comic->description }}"></textarea>
                 {{--* error method  --}}
                 @error('description')
                 <div class="invalid-feedback">
